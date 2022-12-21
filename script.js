@@ -1,5 +1,5 @@
-const numberA = document.querySelector(".number_A").value;
-const numberB = document.querySelector(".number_B").value;
+const numberA = document.querySelector(".number_A");
+const numberB = document.querySelector(".number_B");
 
 const sumButton = document.querySelector(".sum");
 const subButton = document.querySelector(".sub");
@@ -7,54 +7,55 @@ const divButton = document.querySelector(".div");
 const mulButton = document.querySelector(".mul");
 const modButton = document.querySelector(".mod");
 
-sumResult = +numberA + +numberB;
-subResult = +numberA - +numberB;
-divResult = +numberA / +numberB;
-mulResult = +numberA * +numberB;
-modResult = +numberA % +numberB;
-
 sumButton.addEventListener("click", addAandB);
 
 function addAandB() {
+  const sumResult = +numberA.value + +numberB.value;
   document.querySelector(
     "h3"
-  ).innerText = `${numberA} + ${numberB} =${sumResult}`;
+  ).innerText = `${numberA.value} + ${numberB.value} =${sumResult}`;
 }
 
 subButton.addEventListener("click", subAandB);
 
 function subAandB() {
+  const subResult = +numberA.value - +numberB.value;
   document.querySelector(
     "h3"
-  ).innerText = `${numberA} - ${numberB} =${subResult}`;
+  ).innerText = `${numberA.value} - ${numberB.value} =${subResult}`;
 }
 
 divButton.addEventListener("click", divAandB);
 
 function divAandB() {
+  const divResult = +numberA.value / +numberB.value;
   document.querySelector(
     "h3"
-  ).innerText = `${numberA} / ${numberB} =${divResult}`;
+  ).innerText = `${numberA.value} / ${numberB.value} =${divResult}`;
 }
 
 mulButton.addEventListener("click", mulAandB);
 
 function mulAandB() {
+  const mulResult = +numberA.value * +numberB.value;
   document.querySelector(
     "h3"
-  ).innerText = `${numberA} * ${numberB} =${mulResult}`;
+  ).innerText = `${numberA.value} * ${numberB.value} =${mulResult}`;
 }
 
 modButton.addEventListener("click", modAandB);
 
 function modAandB() {
+  const modResult = +numberA.value % +numberB.value;
   document.querySelector(
     "h3"
-  ).innerText = `${numberA} % ${numberB} =${modResult}`;
+  ).innerText = `${numberA.value} % ${numberB.value} =${modResult}`;
 }
 
 const clearButton = document.querySelector(".clear_button");
 clearButton.addEventListener("click", () => {
   document.querySelector("h3").innerText = "";
-  document.location.reload();
+  numberA.value = "";
+  numberB.value = "";
 });
+
